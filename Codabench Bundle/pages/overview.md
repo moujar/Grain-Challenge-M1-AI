@@ -38,10 +38,9 @@ No prior experience with hyperspectral data is required.
 
 1. Create an account on **Codabench**.
 2. Register for this competition.
-3. Download the dataset from the **Data** or **Resources** tab.
-4. Download the **Starting Kit** to understand the baseline solution.
-5. Train your model and generate predictions.
-6. Submit your results through the **My Submissions** tab.
+3. Download the **Starting Kit** to understand the baseline solution.
+4. Train your model and generate predictions.
+5. Submit your model through the **My Submissions** tab.
 
 ---
 
@@ -50,7 +49,6 @@ No prior experience with hyperspectral data is required.
 Your submissions will be evaluated using standard classification metrics.
 
 * The main metric is **accuracy**.
-* Additional metrics may be used to account for class imbalance.
 
 Details are provided on the **Evaluation** page.
 

@@ -13,8 +13,12 @@ terms: pages/terms.md
 pages:  
   - title: Overview
     file: pages/overview.md
-  # - title: Data
-  #   file: pages/data.md
+  - title: Starting Kit
+    file: pages/starting_kit.md
+  - file: pages/submission.md
+    title: Submission
+  - title: Data
+    file: pages/data.md
   
 # You can have multiple phases
 phases:

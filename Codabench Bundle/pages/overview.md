@@ -1,128 +1,69 @@
-# Overview of the Challenge
+# Overview
 
-## Introduction
-Accurate classification of grain varieties is a key challenge in modern agriculture, directly impacting crop evaluation, yield estimation, and harvest quality management. In many farming practices, multiple seed varieties are sown together in controlled proportions (for example, 50% of variety V1 and 50% of variety V2). However, after harvest, the actual yield distribution often differs from the initial seeding ratio due to factors such as growth performance, environmental adaptation, disease resistance, and inter-varietal interactions.
+## Challenge Description
 
-To assess these outcomes, it is necessary to identify and distinguish grain varieties after harvest. Hyperspectral imaging offers a powerful solution by capturing fine-grained spectral information across hundreds of wavelengths, revealing subtle differences that are invisible to standard RGB imaging. However, hyperspectral data is inherently high-dimensional and complex, requiring robust preprocessing, dimensionality reduction, and classification pipelines.
+In this challenge, the goal is to automatically classify **grain varieties** from images of individual grains.
 
-This challenge leverages real-world hyperspectral grain data provided by INRAE, collected across two consecutive crop years. Participants are invited to design and evaluate machine learning and deep learning models for fine-grained image classification, while also addressing key challenges such as class imbalance, domain shift across years, and generalization to unseen conditions.
+In real agricultural settings, different grain varieties are often **sown together** in the same field. After harvest, the final proportions of each variety may change due to differences in growth, resistance to disease, or adaptation to the environment. To study these effects, it is important to identify which grain belongs to which variety after harvest.
 
----
+To address this problem, **hyperspectral imaging** is used. This type of imaging captures rich spectral information that makes it possible to distinguish between visually similar grain varieties. However, this data is complex and requires machine learning models to analyze it effectively.
 
-## Competition Tasks
-Participants are required to develop models that classify individual grain images into 8 distinct grain varieties.
-
-### Primary Task
-- **Multi-class image classification**: Predict the correct grain variety for each input grain image.
-
-### Secondary Objectives
-- **Robustness across crop years**: Models should generalize well across data collected in different years.
-- **Handling class imbalance**: Some varieties may be under-represented, requiring careful training strategies.
-- **Efficient feature learning**: Extract discriminative representations from reduced hyperspectral data.
+Participants are asked to build models that classify grain images into the correct variety.
 
 ---
 
-## Dataset Description
+## What Is the Task?
 
-### Raw Data Source
-- Provider: **INRAE (French National Research Institute for Agriculture, Food and Environment)**
-- Imaging modality: **Hyperspectral imaging**
-- Number of spectral channels: **216**
-- Crop years: **2019–2020**
-- Original image shape: **(2048, 9100, 216)**
-- Several hyperspectral images per variety and per year
+* You are given images of **individual grains**.
+* Each image belongs to **one of 8 grain varieties**.
+* Your task is to predict the correct variety for each image.
 
-### Preprocessing Pipeline
-1. **Grain Segmentation**  
-   A watershed-based segmentation algorithm is applied to the raw hyperspectral images to isolate individual grains, resulting in approximately **27,000 extracted grains**.
-
-2. **Grain Cropping**  
-   Each segmented grain is cropped into a patch of approximate size **252 × 252 × 216**.
-
-3. **Dimensionality Reduction**  
-   To reduce computational complexity, hyperspectral cubes are projected into three channels using either:
-   - Principal Component Analysis (PCA), or
-   - Selected RGB-equivalent spectral bands.
-
-4. **Final Input Format**  
-   Each grain is provided as a **224 × 224 × 3 image**, suitable for standard convolutional neural networks.
-
-### Labels
-- **8 grain varieties**
-
-### Final Dataset
-- Individual grain images of shape **(224, 224, 3)**
-- Balanced training and testing splits with attention to crop year separation
+This is a **multi-class image classification** problem.
 
 ---
 
-## Competition Phases
+## Who Can Participate?
 
-1. **Development Phase**  
-   Participants explore the dataset, build baseline models, and refine their approaches using the provided training data.
+This challenge is designed for:
 
-2. **Validation Phase**  
-   Submissions are evaluated on a hidden validation set to provide leaderboard feedback.
+* Students in machine learning, computer vision, or data science
+* Researchers interested in agricultural data
+* Anyone who wants to practice image classification on real-world data
 
-3. **Final Evaluation Phase**  
-   The final ranking is determined using a withheld test set, potentially including domain shifts across crop years.
-
----
-
-## Evaluation Metrics
-
-- **Primary Metric:** Classification Accuracy
-- **Secondary Metrics (optional):**
-  - Macro-averaged F1-score
-  - Balanced Accuracy
-
-These metrics encourage robust performance across all varieties, including minority classes.
+No prior experience with hyperspectral data is required.
 
 ---
 
-## How to Join This Competition
+## How to Enter the Challenge
 
-1. Login or create an account on **Codabench**: https://www.codabench.org/
-2. Navigate to the competition page.
-3. Go to the **Starting Kit** tab.
-4. Download the **Dummy Sample Submission**.
-5. Register in the competition.
-6. Submit your results through the **My Submissions** tab.
-
----
-
-## Submissions
-
-This competition accepts **result-only submissions**.
-
-Participants must:
-- Follow the submission format described in the **Starting Kit**.
-- Upload a prediction file containing the predicted class for each test image.
-
-Limits on the number of daily submissions may apply.
+1. Create an account on **Codabench**.
+2. Register for this competition.
+3. Download the **Starting Kit** to understand the baseline solution.
+4. Train your model and generate predictions.
+5. Submit your model through the **My Submissions** tab.
 
 ---
 
-## Timeline
+## What Will Be Evaluated?
 
-- **Competition Launch:** TBD
-- **Development Phase:** TBD
-- **Final Submission Deadline:** TBD
-- **Results Announcement:** TBD
+Your submissions will be evaluated using standard classification metrics.
+
+* The main metric is **accuracy**.
+
+Details are provided on the **Evaluation** page.
 
 ---
 
 ## Credits
 
-- Dataset provided by **INRAE**
-- Challenge design and academic supervision by the teaching and research staff
-- Platform hosting: **Codabench**
+* **Data provider:** INRAE (French National Research Institute for Agriculture, Food and Environment)
+* **Challenge organization:** Teaching and research staff
+* **Platform:** Codabench
+
+We thank INRAE for making this dataset available for educational and research purposes.
 
 ---
 
 ## Contact
 
-For questions regarding the dataset, evaluation, or submission process, please contact:
-
-- **Course staff / organizers:** TBD
-- **Technical support:** Codabench platform help center
+For questions related to the challenge, dataset, or rules, please contact the challenge organizers via the Codabench platform.

@@ -29,23 +29,6 @@ This metric is simple, intuitive, and easy to interpret.
 
 ---
 
-## Secondary Considerations
-
-Although accuracy is the primary metric, participants should be aware that:
-
-* The dataset may contain **class imbalance**.
-* Some grain varieties may be under-represented.
-
-To build robust models, participants are encouraged to also monitor:
-
-* Per-class accuracy
-* Confusion matrices
-* Balanced or macro-averaged metrics during local validation
-
-These additional metrics are **not** used for official ranking but can help improve model quality.
-
----
-
 ## Evaluation Procedure
 
 1. Participants submit a prediction file through the Codabench platform.
@@ -62,7 +45,6 @@ Ground-truth labels for the test set are **never shared** with participants.
 
 * Submissions are ranked based on **accuracy**.
 * Higher accuracy results in a better rank.
-* In case of equal scores, submissions may share the same rank.
 
 Limits on the number of daily submissions may apply.
 

@@ -4,7 +4,6 @@
 # - fit: trains the model
 # - predict: uses the model to perform predictions
 #
-# Created by: Abderrahmane Moujar and  Oloruntobi Paul Olutola
 # Created on: 30 Jan, 2026
 
 # ----------------------------------------
